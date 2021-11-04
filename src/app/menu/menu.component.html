@@ -1,0 +1,30 @@
+<div class="menu-container">
+  <input type="text" class="text-input" [formControl]="control" />
+  <table>
+    <tr>
+      <th colspan="2">
+        Input options:
+      </th>
+    </tr>
+    <tr>
+      <th>
+        Colors
+      </th>
+      <th>
+        Shapes
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <ul>
+          <li *ngFor="let color of colors">{{ color }}</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li *ngFor="let shape of shapes">{{ shape }}</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+</div>

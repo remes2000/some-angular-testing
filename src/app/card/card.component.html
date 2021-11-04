@@ -1,0 +1,8 @@
+<div>
+  <button (click)="getRandomCard()">Get random card!</button>
+</div>
+<div *ngIf="card" class="card-container">
+  <img [src]="card.image" />
+</div>
+<h1>{{ cardShape }}</h1>
+<h1 *ngIf="card && card.value === 'KING'">KING</h1>
