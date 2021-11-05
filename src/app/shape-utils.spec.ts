@@ -60,18 +60,32 @@ const testCases: ShapeUtilsTestCase[] = [
 
 
 describe('ShapeUtils', () => {
-  testCases.forEach((testCase) => {
-    it(`${testCase.renderRequestString} should be ${testCase.isValidRenderRequestString ? 'valid' : 'invalid'} render request string`, () => {
-      expect(ShapeUtils.isValidRenderRequestString(testCase.renderRequestString)).toBe(testCase.isValidRenderRequestString);
+  describe(`isValidRenderRequestString`, () => {
+    testCases.forEach((testCase) => {
+      it(`"${testCase.renderRequestString}" should be ${testCase.isValidRenderRequestString ? 'valid' : 'invalid'} render request string`, () => {
+        expect(ShapeUtils.isValidRenderRequestString(testCase.renderRequestString)).toBe(testCase.isValidRenderRequestString);
+      });  
     });
+  });
 
-    if(testCase.isValidRenderRequestString) {
-      it(`should return correct shape for ${testCase.renderRequestString}`, () => {
+  describe(`getShapeFromRenderRequestString`, () => {
+    testCases.filter(testCase => testCase.isValidRenderRequestString).forEach((testCase) => {
+      it(`should return ${testCase.shape} for ${testCase.renderRequestString}`, () => {
         expect(ShapeUtils.getShapeFromRenderRequestString(testCase.renderRequestString)).toBe(testCase.shape);
       });
-      it(`should return correct color for ${testCase.renderRequestString}`, () => {
+    });
+  });
+
+  describe(`getColorFromRenderRequestString`, () => {
+    testCases.filter(testCase => testCase.isValidRenderRequestString).forEach((testCase) => {
+      it(`should return ${testCase.color} for ${testCase.renderRequestString}`, () => {
         expect(ShapeUtils.getColorFromRenderRequestString(testCase.renderRequestString)).toBe(testCase.color);
       });
+    });
+  });
+
+  describe(`getRenderRequestFromString`, () => {
+    testCases.filter(testCase => testCase.isValidRenderRequestString).forEach((testCase) => {
       it(`should return correct render request for ${testCase.renderRequestString}`, () => {
         const renderRequest = ShapeUtils.getRenderRequestFromString(testCase.renderRequestString);
         expect(renderRequest).toEqual({
@@ -79,6 +93,6 @@ describe('ShapeUtils', () => {
           color: testCase.color
         })
       });
-    }
+    });
   });
 });

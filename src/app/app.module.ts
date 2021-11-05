@@ -8,6 +8,7 @@ import { DisplayComponent } from './display/display.component';
 import { CardComponent } from './card/card.component';
 import { HttpClientModule} from '@angular/common/http';
 import { MathComponent } from './math/math.component';
+import { DummyComponentOne, DummyComponentThree, DummyComponentTwo, HideButtonComponent } from './hide-button/hide-button.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,11 @@ import { MathComponent } from './math/math.component';
     MenuComponent,
     DisplayComponent,
     CardComponent,
-    MathComponent
+    MathComponent,
+    HideButtonComponent,
+    DummyComponentOne,
+    DummyComponentTwo,
+    DummyComponentThree
   ],
   imports: [
     BrowserModule,
