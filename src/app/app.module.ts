@@ -7,13 +7,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DisplayComponent } from './display/display.component';
 import { CardComponent } from './card/card.component';
 import { HttpClientModule} from '@angular/common/http';
+import { MathComponent } from './math/math.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     DisplayComponent,
-    CardComponent
+    CardComponent,
+    MathComponent
   ],
   imports: [
     BrowserModule,

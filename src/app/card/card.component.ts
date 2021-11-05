@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Card } from '../interface/card';
-import { CardService } from '../service/card.service';
+import { CardService } from '../service/card/card.service';
 
 @Component({
   selector: 'app-card',
